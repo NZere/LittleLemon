@@ -20,6 +20,12 @@ class MenuItemSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class BookingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Booking
+        fields = '__all__'
+
+
 class CartSerializer(serializers.ModelSerializer):
     menuitem = serializers.PrimaryKeyRelatedField(queryset=Menu.objects.all())
     unit_price = serializers.ReadOnlyField()
